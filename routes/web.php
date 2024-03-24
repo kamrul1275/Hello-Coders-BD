@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Contact\ContactController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -39,3 +40,8 @@ Route::get('/admin/login',[AdminController::class, 'adminLoginForm']);
 Route::get('/admin/dashboard/',[AdminController::class, 'adminDashboard'])->name('admin.dashboard');
 
 Route::get('/admin/logout',[AdminController::class, 'adminLogout'])->name('admin.logout');
+
+
+// contact page
+Route::get('/contact',[ContactController::class,'ContactPage'])->name('contact.page');
+Route::post('/contact/store',[ContactController::class,'ContactStore'])->name('contact.store');
